@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  section[id] {
+    scroll-margin-top: 96px;
+  }
+
+  body {
+    @apply bg-bg text-ink font-body;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink;
+  }
+
+  ::selection {
+    background: theme("colors.green.DEFAULT");
+    color: #ffffff;
+  }
+}

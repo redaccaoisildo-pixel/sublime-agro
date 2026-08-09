@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1376.84 392.95">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        fill: #3aaa35;
+      }
+
+      .cls-3 {
+        fill: #683c11;
+      }
+
+      .cls-4 {
+        fill: #fff;
+        font-family: Montserrat-BoldItalic, Montserrat;
+        font-size: 160.14px;
+      }
+    </style>
+  </defs>
+  <g id="Camada_1-2" data-name="Camada 1">
+    <g>
+      <g>
+        <g>
+          <polygon class="cls-3" points="13.16 392.95 0 378.15 39.72 11.9 52.88 0 906.12 0 919.28 14.8 879.56 381.05 866.4 392.95 13.16 392.95"/>
+          <polygon class="cls-3" points="866.4 379.6 13.16 379.6 52.88 13.35 906.12 13.35 866.4 379.6"/>
+        </g>
+        <g>
+          <polygon class="cls-2" points="820.79 392.95 807.58 378.72 831.73 12.46 844.94 0 1363.63 0 1376.84 14.23 1352.69 380.49 1339.48 392.95 820.79 392.95"/>
+          <polygon class="cls-2" points="1339.48 379.6 820.79 379.6 844.94 13.35 1363.63 13.35 1339.48 379.6"/>
+        </g>
+      </g>
+      <text class="cls-4" transform="translate(39.95 255.1)"><tspan x="0" y="0">SUBLIME</tspan></text>
+      <circle class="cls-2" cx="937.36" cy="205.37" r="126.78"/>
+      <text class="cls-4" transform="translate(840.68 255.1)"><tspan class="cls-1" x="0" y="0">A</tspan><tspan x="121.07" y="0">GRO</tspan></text>
+    </g>
+  </g>
+</svg>
