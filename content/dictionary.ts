@@ -21,8 +21,7 @@ export const dictionary = {
     pt: "Mercadorias agrícolas · Província do Niassa, Moçambique",
     en: "Agricultural commodities · Niassa Province, Mozambique"
   },
-  heroTitlePrefix: { pt: "Preço, origem e prazo — ", en: "Price, origin and lead time — " },
-  heroTitleEmphasis: { pt: "à vista", en: "upfront" },
+  heroTitle: { pt: "Consulte, escolha e encomende.", en: "Check, pick & order." },
   heroLead: {
     pt: "Toda a carteira de feijões agregada no Niassa, com unidade, qualidade, condição de entrega e preço datado. Sem telefonema prévio.",
     en: "The full bean portfolio aggregated in Niassa, with unit, grade, delivery terms and a dated price. No phone call required."

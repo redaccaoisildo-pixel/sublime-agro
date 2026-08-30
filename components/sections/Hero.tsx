@@ -31,20 +31,9 @@ export default function Hero() {
 
           <motion.h1
             {...fadeUp(0.1)}
-            className="my-4 max-w-[13ch] font-display text-hero-lg font-bold text-ink"
+            className="my-4 max-w-[14ch] font-display text-hero-lg font-bold italic uppercase text-brown"
           >
-            {t("heroTitlePrefix")}
-            <span className="relative whitespace-nowrap">
-              {t("heroTitleEmphasis")}
-              <motion.span
-                aria-hidden="true"
-                initial={reduce ? { scaleX: 1 } : { scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.9, ease: [0.22, 0.61, 0.36, 1], delay: 0.5 }}
-                style={{ transformOrigin: "left" }}
-                className="absolute -left-[0.04em] -right-[0.04em] bottom-[0.08em] -z-10 h-[0.24em] bg-green opacity-30"
-              />
-            </span>
+            {t("heroTitle")}
           </motion.h1>
 
           <motion.p {...fadeUp(0.18)} className="mb-[30px] max-w-[44ch] text-[clamp(16px,0.5vw+15px,17.5px)] text-ink-2">
