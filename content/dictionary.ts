@@ -23,8 +23,8 @@ export const dictionary = {
   },
   heroTitle: { pt: "Consulte, escolha e encomende.", en: "Check, pick & order." },
   heroLead: {
-    pt: "Toda a carteira de feijões agregada no Niassa, com unidade, qualidade, condição de entrega e preço datado. Sem telefonema prévio.",
-    en: "The full bean portfolio aggregated in Niassa, with unit, grade, delivery terms and a dated price. No phone call required."
+    pt: "Toda a carteira de produtos agrícolas agregada do Niassa. Todas as certificações de qualidade garantidas. Peça a sua cotação e compre mercadoria de forma mais cómoda.",
+    en: "The full portfolio of agricultural products aggregated from Niassa. Every quality certification guaranteed. Request your quote and buy commodities more conveniently."
   },
   heroCtaPrimary: { pt: "Ver carteira", en: "View portfolio" },
   heroCtaSecondary: { pt: "Ver pontos de recolha", en: "View collection points" },
