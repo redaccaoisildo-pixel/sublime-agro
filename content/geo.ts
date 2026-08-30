@@ -24,11 +24,28 @@ export type CollectionPoint = {
   y: number;
 };
 
-// PLACEHOLDER — confirm the real, complete list of collection points with the client.
+// All 16 official districts of Niassa province. Positions are computed from
+// each district capital's real coordinates, linearly projected into this
+// SVG's coordinate space (fitted against Lichinga/Cuamba/Mandimba/Marrupa,
+// whose pixel positions were already known) — an approximation, not
+// geodetically exact, but faithful to real relative geography rather than
+// hand-guessed. Districts with no product listed still appear on the map,
+// per client instruction.
 export const COLLECTION_POINTS: CollectionPoint[] = [
   { id: "lichinga", name: "Lichinga", x: 128.5, y: 307.5 },
+  { id: "chimbonila", name: "Chimbonila", x: 151.6, y: 305.7 },
   { id: "cuamba", name: "Cuamba", x: 316.5, y: 529.6 },
   { id: "mandimba", name: "Mandimba", x: 187.9, y: 464.5 },
   { id: "marrupa", name: "Marrupa", x: 457.1, y: 289.1 },
-  { id: "metangula", name: "Metangula", x: 67.6, y: 214.7 }
+  { id: "ngauma", name: "N'gauma", x: 159.9, y: 391.9 },
+  { id: "majune", name: "Majune", x: 307.4, y: 307.3 },
+  { id: "sanga", name: "Sanga", x: 174.0, y: 145.9 },
+  { id: "lago", name: "Lago", x: 66.1, y: 217.0 },
+  { id: "muembe", name: "Muembe", x: 186.9, y: 273.9 },
+  { id: "mecanhelas", name: "Mecanhelas", x: 219.4, y: 585.9 },
+  { id: "maua", name: "Maúa", x: 406.9, y: 389.9 },
+  { id: "mavago", name: "Mavago", x: 319.8, y: 153.8 },
+  { id: "mecula", name: "Mecula", x: 481.6, y: 130.8 },
+  { id: "metarica", name: "Metarica", x: 355.1, y: 457.3 },
+  { id: "nipepe", name: "Nipepe", x: 509.0, y: 413.2 }
 ];

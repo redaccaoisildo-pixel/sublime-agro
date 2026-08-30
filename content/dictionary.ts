@@ -92,6 +92,10 @@ export const dictionary = {
     pt: "Janelas de disponibilidade por variedade ao longo do ano.",
     en: "Availability windows by variety across the year."
   },
+  calendarPendingData: {
+    pt: "Ainda não temos dados reais de época de colheita por variedade — esta secção fica pendente até o cliente confirmar.",
+    en: "We don't yet have real harvest-season data per variety — this section is pending until the client confirms it."
+  },
 
   // Notes / blog
   notesEyebrow: { pt: "Editorial", en: "Editorial" },

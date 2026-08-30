@@ -12,10 +12,27 @@ const GW = VB_W - MARGIN.left - MARGIN.right;
 type Props = { products: Product[] };
 
 export default function HarvestCalendarChart({ products }: Props) {
-  const { locale, pick, t } = useLocale();
+  const { pick, t } = useLocale();
   const rowH = (VB_H - MARGIN.top - MARGIN.bottom) / products.length;
   const monthW = GW / 12;
   const currentMonth = new Date().getMonth() + 1;
+
+  // Every product currently shares the same placeholder [1,12] harvest
+  // window (no real per-variety season data exists yet) — showing 45
+  // identical "always in season" bars would both be illegible (rows a few
+  // px tall) and misleading (implying real data). Show a pending state
+  // instead until the client supplies real harvest windows.
+  const hasRealData = products.some(
+    (p) => p.harvestMonths[0] !== products[0]?.harvestMonths[0] || p.harvestMonths[1] !== products[0]?.harvestMonths[1]
+  );
+
+  if (!hasRealData) {
+    return (
+      <div className="flex h-[300px] items-center justify-center rounded-sm border border-dashed border-line px-6 text-center text-sm text-ink-3">
+        {t("calendarPendingData")}
+      </div>
+    );
+  }
 
   function monthX(month: number) {
     return MARGIN.left + (month - 1) * monthW;
