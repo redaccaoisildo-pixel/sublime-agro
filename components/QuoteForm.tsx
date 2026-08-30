@@ -64,12 +64,21 @@ export default function QuoteForm() {
 
     setStatus("submitting");
     try {
-      // TODO(sublime-agro): replace this stub once the client has a domain
-      // and inbox. Planned shape: POST FormData to app/api/quote/route.ts,
-      // same pattern as thecopyside.com's app/api/contact/route.ts —
-      // force-dynamic, nodejs runtime, lazy `new Resend(...)`, honeypot
-      // check, HTML+text email to the studio inbox with replyTo the sender.
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      const body = new FormData();
+      Object.entries(form).forEach(([key, value]) => body.append(key, value));
+
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        body,
+        headers: { Accept: "application/json" }
+      });
+      const data = (await res.json()) as { ok: boolean };
+
+      if (!res.ok || !data.ok) {
+        setStatus("error");
+        return;
+      }
+
       setStatus("ok");
       setForm(EMPTY_FORM);
     } catch {
