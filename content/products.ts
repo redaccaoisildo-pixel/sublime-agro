@@ -23,27 +23,28 @@ export type Product = {
 
 /**
  * Product/district/price data below is real, sourced from the client's own
- * document ("Dados SublimeAgro, Lda..docx"), applying two rules the client
- * gave explicitly:
+ * documents ("Dados SublimeAgro, Lda..docx" for beans, plus a follow-up
+ * table for maize), applying rules the client gave explicitly:
  *  1. Where a price is given as a range, use the lowest value.
  *  2. Where a district row lists more varieties than prices (or the mapping
  *     between them is ambiguous), apply the same price — the lowest one
  *     listed for that district — to every variety in that row.
+ *  3. Minimum volume is a flat 5 t for every product (client-confirmed).
+ *  4. Price validity date is 2026-09-07 for every product (client-confirmed).
  *
- * Fields with NO source in that document — grade/quality spec, delivery
- * terms, harvest season, minimum volume, price validity date — are marked
- * with the shared placeholders below and still need real input from the
- * client before launch. Scientific names are inferred from the common bean
- * species each variety belongs to (Phaseolus vulgaris / Vigna unguiculata /
- * Arachis hypogaea), matched against the species lists the client's
- * document itself gives per district.
+ * Fields with NO source in either document — grade/quality spec, delivery
+ * terms, harvest season — are marked with the shared placeholders below and
+ * still need real input from the client before launch. Scientific names are
+ * inferred from the common species each variety belongs to (Phaseolus
+ * vulgaris / Vigna unguiculata / Arachis hypogaea / Zea mays), matched
+ * against the species the client's own documents give per district/variety.
  */
 const PENDING_GRADE: Bilingual = { pt: "Especificação a confirmar", en: "Specification to be confirmed" };
 const PENDING_DELIVERY: Bilingual = { pt: "Condição de entrega a confirmar", en: "Delivery terms to be confirmed" };
 const YEAR_ROUND_SEASON: Bilingual = { pt: "Todo o ano (a confirmar)", en: "Year-round (to be confirmed)" };
 const TONNE: Bilingual = { pt: "tonelada", en: "tonne" };
-const PENDING_VALID_UNTIL = "2026-12-31"; // placeholder — confirm real validity cadence with the client
-const PENDING_MIN_VOLUME = 1; // placeholder — no minimum was specified per variety
+const VALID_UNTIL = "2026-09-07"; // client-confirmed, applies to every product
+const MIN_VOLUME_TONNES = 5; // client-confirmed, applies to every product
 
 function product(
   id: string,
@@ -64,17 +65,22 @@ function product(
     seasonLabel: YEAR_ROUND_SEASON,
     unit: TONNE,
     statusKey: "inSeason",
-    minVolumeTonnes: PENDING_MIN_VOLUME,
+    minVolumeTonnes: MIN_VOLUME_TONNES,
     priceMzn,
-    priceValidUntil: PENDING_VALID_UNTIL
+    priceValidUntil: VALID_UNTIL
   };
 }
 
 const VULGARIS = "Phaseolus vulgaris";
 const UNGUICULATA = "Vigna unguiculata";
 const HYPOGAEA = "Arachis hypogaea";
+const ZEA_MAYS = "Zea mays";
 
 export const PRODUCTS: Product[] = [
+  // Maize — available across three districts each, prices as given (no range/mismatch to resolve)
+  product("milho-branco", "Milho branco", "White maize", ZEA_MAYS, ["lichinga", "sanga", "ngauma"], 76000),
+  product("milho-amarelo", "Milho amarelo", "Yellow maize", ZEA_MAYS, ["cuamba", "lago", "majune"], 86000),
+
   // Lichinga — 5 varieties listed against 2 prices (110.000–1.350.000 MZN, 160.000) → lowest (110.000) applied to all
   product("lichinga-vulgar", "Feijão vulgar", "Common bean", VULGARIS, ["lichinga"], 110000),
   product("lichinga-branco", "Feijão branco", "White bean", VULGARIS, ["lichinga"], 110000),
